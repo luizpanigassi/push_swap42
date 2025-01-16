@@ -1,6 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push_swap_simple_sorting.c                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/16 15:29:02 by luinasci          #+#    #+#             */
+/*   Updated: 2025/01/16 16:27:51 by luinasci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Get the minimum number in the stack
+#include "../includes/ft_push_swap.h"
 
 static int	ft_get_min(t_list **stack, int val)
 {
@@ -17,8 +27,6 @@ static int	ft_get_min(t_list **stack, int val)
 	}
 	return (min);
 }
-
-// Quick sort of 3 numbers
 
 static void	ft_sort_3(t_list **stack_a)
 {
@@ -56,8 +64,6 @@ static void	ft_sort_3(t_list **stack_a)
 	}
 }
 
-// Quick sort for 4 numbers
-
 static void	ft_sort_4(t_list **stack_a, t_list **stack_b)
 {
 	int	distance;
@@ -81,15 +87,13 @@ static void	ft_sort_4(t_list **stack_a, t_list **stack_b)
 	ft_pa(stack_a, stack_b);
 }
 
-// Quick sorting for 5 numbers
-
 void	ft_sort_5(t_list **stack_a, t_list **stack_b)
 {
 	int	distance;
 
 	distance = ft_get_distance(stack_a, ft_get_min(stack_a, -1));
 	if (distance == 1)
-		ra(stack_a);
+		ft_ra(stack_a);
 	else if (distance == 2)
 	{
 		ft_ra(stack_a);
@@ -108,8 +112,6 @@ void	ft_sort_5(t_list **stack_a, t_list **stack_b)
 	ft_sort_4(stack_a, stack_b);
 	ft_pa(stack_a, stack_b);
 }
-
-// Simple sorting algorithms for small stacks
 
 void	ft_simple_sort(t_list **stack_a, t_list **stack_b)
 {

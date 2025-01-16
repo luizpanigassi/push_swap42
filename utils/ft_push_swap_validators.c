@@ -1,6 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push_swap_validators.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/16 15:28:39 by luinasci          #+#    #+#             */
+/*   Updated: 2025/01/16 17:20:56 by luinasci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Validate the input arguments
+#include "../includes/ft_push_swap.h"
 
 static int	ft_check_duplicates(int num, char **argv, int i)
 {
@@ -34,7 +44,7 @@ void	ft_check_args(int argc, char **argv)
 {
 	int		i;
 	long	tmp;
-	char	**args;	
+	char	**args;
 
 	i = 0;
 	if (argc == 2)
@@ -51,10 +61,24 @@ void	ft_check_args(int argc, char **argv)
 			ft_error("Error, invalid argument");
 		if (ft_check_duplicates(tmp, args, i))
 			ft_error("Error, duplicate numbers");
-		if (tmp < -2147483648 || tmp > 2147483647)
+		if (!ft_is_int_range(args[i]))
 			ft_error("Error, number out of range");
 		i++;
 	}
 	if (argc == 2)
 		ft_free(args);
+}
+
+int	ft_is_sorted(t_list **stack)
+{
+	t_list	*head;
+
+	head = *stack;
+	while (head && head->next)
+	{
+		if (head->value > head->next->value)
+			return (0);
+		head = head->next;
+	}
+	return (1);
 }

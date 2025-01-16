@@ -1,8 +1,18 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push_swap_main.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/16 15:28:53 by luinasci          #+#    #+#             */
+/*   Updated: 2025/01/16 16:28:01 by luinasci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Initialize the stack
+#include "../includes/ft_push_swap.h"
 
-static void	ft_initStack(t_list **stack, int argc, char **argv)
+static void	ft_init_stack(t_list **stack, int argc, char **argv)
 {
 	t_list	*new;
 	char	**args;
@@ -27,8 +37,6 @@ static void	ft_initStack(t_list **stack, int argc, char **argv)
 		ft_free(args);
 }
 
-// Sorting
-
 static void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 5)
@@ -49,7 +57,7 @@ int	main(int argc, char **argv)
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
-	ft_initStack(stack_a, argc, argv);
+	ft_init_stack(stack_a, argc, argv);
 	if (ft_is_sorted(stack_a))
 	{
 		ft_free_stack(stack_a);
@@ -61,4 +69,3 @@ int	main(int argc, char **argv)
 	ft_free_stack(stack_b);
 	return (0);
 }
-

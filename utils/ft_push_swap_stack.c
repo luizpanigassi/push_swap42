@@ -1,6 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push_swap_stack.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/16 15:28:25 by luinasci          #+#    #+#             */
+/*   Updated: 2025/01/16 16:27:48 by luinasci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Get the next minimum number in the stack
+#include "../includes/ft_push_swap.h"
 
 static t_list	*ft_get_next_min(t_list **stack)
 {
@@ -25,8 +35,6 @@ static t_list	*ft_get_next_min(t_list **stack)
 	}
 	return (min);
 }
-
-// Index the stack
 
 void	ft_index_stack(t_list **stack)
 {

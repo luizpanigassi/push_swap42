@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   ft_push_swap_radix_sorting.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:33:22 by shovsepy          #+#    #+#             */
-/*   Updated: 2021/07/09 18:33:23 by shovsepy         ###   ########.fr       */
+/*   Updated: 2025/01/16 16:27:59 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-// Get the max bits of the stack
+#include "../includes/ft_push_swap.h"
 
 static int	ft_get_max_bits(t_list **stack)
 {
@@ -33,8 +31,6 @@ static int	ft_get_max_bits(t_list **stack)
 		max_bits++;
 	return (max_bits);
 }
-
-// Pure radix sorting algorithm
 
 void	ft_radix_sort(t_list **stack_a, t_list **stack_b)
 {
@@ -60,7 +56,7 @@ void	ft_radix_sort(t_list **stack_a, t_list **stack_b)
 				ft_pb(stack_a, stack_b);
 		}
 		while (ft_lstsize(*stack_b) != 0)
-			pa(stack_a, stack_b);
+			ft_pa(stack_a, stack_b);
 		i++;
 	}
 }
