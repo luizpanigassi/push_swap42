@@ -6,13 +6,13 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:28:53 by luinasci          #+#    #+#             */
-/*   Updated: 2025/01/16 16:28:01 by luinasci         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:01:23 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-static void	ft_init_stack(t_list **stack, int argc, char **argv)
+void	ft_init_stack(t_list **stack, int argc, char **argv)
 {
 	t_list	*new;
 	char	**args;
@@ -37,7 +37,7 @@ static void	ft_init_stack(t_list **stack, int argc, char **argv)
 		ft_free(args);
 }
 
-static void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
+void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 5)
 		ft_simple_sort(stack_a, stack_b);

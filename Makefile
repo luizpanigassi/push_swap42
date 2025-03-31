@@ -6,7 +6,7 @@
 #    By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/08 16:32:28 by luinasci          #+#    #+#              #
-#    Updated: 2025/01/16 16:27:20 by luinasci         ###   ########.fr        #
+#    Updated: 2025/01/16 18:03:15 by luinasci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,12 @@ SRC =	src/ft_push_swap_main.c \
 		src/ft_push_swap_rotators.c \
 		src/ft_push_swap_simple_sorting.c \
 		src/ft_push_swap_swappers.c \
+		utils/ft_push_swap_simple_sorting_utils.c \
 		utils/ft_push_swap_stack.c \
-		utils/ft_push_swap_validators.c \
+		utils/ft_push_swap_t_list.c \
 		utils/ft_push_swap_utils.c \
-		utils/ft_push_swap_t_list.c
+		utils/ft_push_swap_utils2.c \
+		utils/ft_push_swap_validators.c \
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,13 +6,13 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:28:39 by luinasci          #+#    #+#             */
-/*   Updated: 2025/01/16 17:20:56 by luinasci         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:01:40 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-static int	ft_check_duplicates(int num, char **argv, int i)
+int	ft_check_duplicates(int num, char **argv, int i)
 {
 	i++;
 	while (argv[i])
@@ -24,7 +24,7 @@ static int	ft_check_duplicates(int num, char **argv, int i)
 	return (0);
 }
 
-static int	ft_isnum(char *num)
+int	ft_isnum(char *num)
 {
 	int	i;
 

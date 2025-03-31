@@ -5,30 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 15:29:02 by luinasci          #+#    #+#             */
-/*   Updated: 2025/01/16 16:27:51 by luinasci         ###   ########.fr       */
+/*   Created: 2025/01/16 17:45:41 by luinasci          #+#    #+#             */
+/*   Updated: 2025/01/16 18:01:31 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-static int	ft_get_min(t_list **stack, int val)
-{
-	t_list	*head;
-	int		min;
-
-	head = *stack;
-	min = head->index;
-	while (head->next)
-	{
-		head = head->next;
-		if ((head->index < min) && head->index != val)
-			min = head->index;
-	}
-	return (min);
-}
-
-static void	ft_sort_3(t_list **stack_a)
+void	ft_sort_3(t_list **stack_a)
 {
 	t_list	*head;
 	int		min;
@@ -40,18 +24,9 @@ static void	ft_sort_3(t_list **stack_a)
 	if (ft_is_sorted(stack_a))
 		return ;
 	if (head->index == min && head->next->index != next_min)
-	{
-		ft_ra(stack_a);
-		ft_sa(stack_a);
-		ft_rra(stack_a);
-	}
+		ft_handle_min_case(stack_a);
 	else if (head->index == next_min)
-	{
-		if (head->next->index == min)
-			ft_sa(stack_a);
-		else
-			ft_rra(stack_a);
-	}
+		ft_handle_next_min_case(stack_a);
 	else
 	{
 		if (head->next->index == min)
@@ -64,7 +39,7 @@ static void	ft_sort_3(t_list **stack_a)
 	}
 }
 
-static void	ft_sort_4(t_list **stack_a, t_list **stack_b)
+void	ft_sort_4(t_list **stack_a, t_list **stack_b)
 {
 	int	distance;
 
@@ -130,4 +105,3 @@ void	ft_simple_sort(t_list **stack_a, t_list **stack_b)
 	else if (size == 5)
 		ft_sort_5(stack_a, stack_b);
 }
-

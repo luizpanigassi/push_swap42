@@ -6,13 +6,13 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:33:22 by shovsepy          #+#    #+#             */
-/*   Updated: 2025/01/16 16:27:59 by luinasci         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:01:27 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-static int	ft_get_max_bits(t_list **stack)
+int	ft_get_max_bits(t_list **stack)
 {
 	t_list	*head;
 	int		max;
